@@ -1,22 +1,22 @@
-#Laravel 9 Passport Authentication
+# Laravel 9 Passport Authentication
 
 What is Laravel Passport? Laravel Passport is an OAuth 2.0 server implementation for API authentication using Laravel. Since tokens are generally used in API authentication, Laravel Passport provides an easy and secure way to implement token authorization on an OAuth 2.0 server.
 
-#Passport Or Sanctum?
+# Passport Or Sanctum?
 
 Before getting started, you may wish to determine if your application would be better served by Laravel Passport or Laravel Sanctum. If your application absolutely needs to support OAuth2, then you should use Laravel Passport.
 
 However, if you are attempting to authenticate a single-page application, mobile application, or issue API tokens, you should use Laravel Sanctum. Laravel Sanctum does not support OAuth2; however, it provides a much simpler API authentication development experience.
 
-###You have to follow the steps for passport api authentication
+### You have to follow the steps for passport api authentication
 
-#Step 1 Create new laravel application
+# Step 1 Create new laravel application
 
 ````
 composer create-project laravel laravel {YOUR APPLICATION NAME}
 ````
 
-#Step 2: set up database in your .env file
+# Step 2: set up database in your .env file
 
 ````
 DB_DATABASE={DATABASE NAME}
@@ -24,31 +24,31 @@ DB_USERNAME=root
 DB_PASSWORD=
 ````
 
-#Step 3: Run migrations
- ####Go inside your application by cd {APP NAME}
- ####Run your migrations
+# Step 3: Run migrations
+#### Go inside your application by cd {APP NAME}
+#### Run your migrations
 
  ````
  php artisan migrate
  ````
 
- #Step 3 install passport
-####It will create migration keys for secure authentication
+# Step 3 install passport
+#### It will create migration keys for secure authentication
  ````
  php artisan passport:install
  ````
 
- ###Follow this step [IMPORTANT]
+### Follow this step [IMPORTANT]
 
- #Step 4
-######Add the Laravel\Passport\HasApiTokens trait to your App\Models\User model. 
+# Step 4
+###### Add the Laravel\Passport\HasApiTokens trait to your App\Models\User model. 
 
-####Laravel\Sanctum\HasApiTokens
-##To
-####Laravel\Passport\HasApiTokens
+#### Laravel\Sanctum\HasApiTokens
+## To
+#### Laravel\Passport\HasApiTokens
 
-#Step 5
-#####Finally, in your application's config/auth.php configuration file, you should define an api authentication guard and set the driver option to passport. This will instruct your application to use Passport's TokenGuard when authenticating incoming API requests:
+# Step 5
+##### Finally, in your application's config/auth.php configuration file, you should define an api authentication guard and set the driver option to passport. This will instruct your application to use Passport's TokenGuard when authenticating incoming API requests:
 
 ````
 'guards' => [
@@ -64,11 +64,11 @@ DB_PASSWORD=
 ],
 ````
 
-##Your passport is successfully installed and setup
+## Your passport is successfully installed and setup
 
 Now you have to make routes and methods for authentication
 
-###Routes in routes/api.php
+### Routes in routes/api.php
 
 ````
 <!-- register route -->
@@ -86,7 +86,7 @@ Route::middleware('auth:api')->group(function(){
 });
 ````
 
-#Methods in Controller
+# Methods in Controller
 
 ````
 <?php
@@ -139,7 +139,7 @@ class Icontroller extends Controller
 ````
 
 
-#####Have a nice day ahead :)
+##### Have a nice day ahead :)
 
 
 
