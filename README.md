@@ -68,7 +68,7 @@ DB_PASSWORD=
 
 Now you have to make routes and methods for authentication
 
-### Routes in routes/api.php
+### Step 6 Routes in routes/api.php
 
 ````
 <!-- register route -->
@@ -86,7 +86,13 @@ Route::middleware('auth:api')->group(function(){
 });
 ````
 
-# Methods in Controller
+# Step 7 Make a controller
+
+````
+php artisan make:controller {CONTROLLER NAME}
+````
+
+# Step 8 Methods in Controller
 
 ````
 <?php
